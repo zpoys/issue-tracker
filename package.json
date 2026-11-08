@@ -1,0 +1,25 @@
+{
+  "name": "supplier-price-comparator",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "start": "bun run build/index.js",
+    "db-push": "bun --bun drizzle-kit push",
+    "db-generate": "bun --bun drizzle-kit generate",
+    "db-migrate": "bun --bun drizzle-kit migrate",
+    "build-ts": "bun build ./src/index.ts --outdir ./build --target=bun",
+    "build-windows": "bun build --compile --target=bun-windows-x64 --define PLATFORM='\"windows\"' src/index.ts --outfile app-windows.exe",
+    "typecheck": "bun check"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.18.0",
+    "drizzle-orm": "^1.0.0-rc.5",
+    "hono": "^4.13.14",
+    "lru-cache": "^11.5.3",
+    "node-html-parser": "^9.0.6",
+    "valibot": "^1.5.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.4",
+    "drizzle-kit": "^1.0.0-rc.5"
+  }
+}
